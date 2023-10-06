@@ -5,11 +5,11 @@
 
 .success {
     text-color: #00FF00;
-    @extend .info;
+    font-size 12px;
 }
 
 .warning {
     text-color: #FF0000;
-    @extend .info;
-    
+    font-size 12px;
+
 }
