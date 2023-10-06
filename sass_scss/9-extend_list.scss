@@ -4,12 +4,11 @@
 }
 
 .success {
+    @extend .info;
     text-color: #00FF00;
-    font-size 12px;
 }
 
 .warning {
+    @extend .info;
     text-color: #FF0000;
-    font-size 12px;
-
 }
