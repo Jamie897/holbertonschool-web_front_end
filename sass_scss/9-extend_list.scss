@@ -5,10 +5,10 @@
 
 .success {
     @extend .info;
-    text-color: #00FF00;
+    color: #00FF00;
 }
 
 .warning {
     @extend .info;
-    text-color: #FF0000;
+    color: #FF0000;
 }
