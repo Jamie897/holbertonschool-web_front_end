@@ -1,0 +1,15 @@
+/* Extend the style of class */
+.info {
+    font-size: 12px;
+}
+
+.success {
+    text-color: #00FF00;
+    @extend .info;
+}
+
+.warning {
+    text-color: #FF0000;
+    @extend .info;
+    
+}
