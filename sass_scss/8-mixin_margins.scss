@@ -1,0 +1,13 @@
+/* Using @mixin */
+@mixin my-margin($size: 10px) {
+    margin-left: $size;
+    margin-right: $size;
+}
+
+body {
+    @include my-margin(10px);
+}
+
+div {
+    @include my-margin($size: 15px);
+}
