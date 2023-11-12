@@ -7,8 +7,10 @@ function divideBy(firstNumber) {
 }
 
 function addBy(firstNumber) {
+    
+    return function (secondNumber)
     {
-        return secondNumber + firstNumber;
+        return firstNumber + secondNumber;
     }
 }
 
