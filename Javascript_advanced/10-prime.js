@@ -8,9 +8,11 @@ function countPrimeNumbers() {
     }
     return primeCount
 }
+
     let start = performance.now();
-    countPrimeNumbers();
+    for(let count = 0; count < 100; count++){
+        countPrimeNumbers();
+    }
     let end = performance.now();
     let lapsed = end - start
-    console.log("Execution time of printing countPrimeNumbers was " + lapsed + " milliseconds.")
-  
+    console.log("Execution time of calculating prime numbers 100 times was " + lapsed + " milliseconds.")
