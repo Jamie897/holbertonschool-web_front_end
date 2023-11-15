@@ -1,10 +1,11 @@
-var roomDimensions; {
-    width: 50;
-    length: 100;
+var roomDimensions = {
+    width: 50,
+    length: 100,
 }
 
 function getArea() {
-    return roomDimensions.width * roomDimensions.length }
+    return roomDimensions.width * roomDimensions.length
+}
 
-    var boundGetArea = getArea.bind(roomDimensions);
-    boundGetArea()
+let boundGetArea = getArea.bind(roomDimensions);
+boundGetArea()
