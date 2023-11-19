@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-    <head>
+<head>
 
-        <meta charset="utf-8" />
-        <title>Task 3</title>
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Task 3</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
 
-        
-    </head>
+</head>
 
+<body>
     <script type="application/javascript">
         function createFamilyTree() {
             var table = $('<table>');
-    
+
             table.append(
                 $('<thead>').append(
                     $('<tr>').append(
@@ -22,7 +22,7 @@
                     )
                 )
             );
-    
+
             table.append(
                 $('<tbody>').append(
                     $('<tr>').append(
@@ -39,26 +39,25 @@
                     )
                 )
             );
-    
+
             $('body').append(table);
         }
-    
+
         $(document).ready(function () {
             createFamilyTree();
 
             function replaceFamilyTree() {
+                // Use append to add the new row to the existing tbody
                 let updateTree = $('<tr>').append(
                     $('<td>').text('Gerard'),
                     $('<td>').text('Bonissa')
                 );
-            $('tbody').html(updateTree);
-        }
-        replaceFamilyTree();
+                $('tbody').append(updateTree);
+            }
+
+            replaceFamilyTree();
+        });
     </script>
-    
-    
-
-
-    </body>
+</body>
 
 </html>
