@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 7</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+
+<body>
+    <script type="application/javascript">
+        function createSearchForm() {
+            const input = $('<input>').attr('type', 'text');
+            const submitButton = $('<input>').attr('type', 'submit');
+            const resultList = $('<ul>');
+
+            submitButton.click(function () {
+                const searchText = input.val();
+                queryWikipedia(searchText);
+            });
+
+            $('body').append(input, submitButton, resultList);
+        }
+
+        function addNewArticle(id, title, snippet) {
+            const listItem = $('<li>');
+            const titleParagraph = $('<p>').append(
+                $('<span>').text(`id - `),
+                $('<b>').text(title)
+            );
+            const snippetParagraph = $('<p>').text(snippet);
+
+            listItem.append(titleParagraph, snippetParagraph);
+            $('ul').append(listItem);
+        }
+
+        function queryWikipedia(search) {
+            const apiUrl = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&origin=*';
+            const requestData = {
+                srsearch: search,
+            };
+
+            $.ajax({
+                url: apiUrl,
+                data: requestData,
+                dataType: 'json',
+                success: function (data) {
+                    const results = data.query.search;
+                    results.forEach(function (result) {
+                        addNewArticle(result.pageid, result.title, result.snippet);
+                    });
+                },
+                error: function (error) {
+                    console.error('Error fetching data from Wikipedia:', error);
+                },
+            });
+        }
+
+        $(document).ready(function () {
+            createSearchForm();
+        });
+    </script>
+</body>
+
+</html>
