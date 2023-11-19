@@ -23,7 +23,7 @@
         }
 
         function addNewMember(firstName, lastName) {
-            var row = $('<tr>').appendTo('tbody');
+            let row = $('<tr>').appendTo('tbody');
             $('<td>').text(firstName).appendTo(row);
             $('<td>').text(lastName).appendTo(row);
             $('<td>').text('(x)').css('background-color', 'orange').click(function () {
