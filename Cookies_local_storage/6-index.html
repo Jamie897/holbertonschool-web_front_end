@@ -52,6 +52,15 @@
       cartMessage.textContent = "You previously had " + cartCount + " items in your cart.";
   }
 
+  if (cartItems.length > 0) {
+    let message = `You previously had ${cartItems.length
+        } item${cartItems.length > 1 ? "s" : ""} in your cart`;
+    let p = document.createElement("p");
+    p.textContent = message;
+    document.body.appendChild(p);
+}
+
+
   </script>
 </body>
 
