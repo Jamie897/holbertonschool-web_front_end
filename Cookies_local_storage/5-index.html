@@ -45,6 +45,13 @@
     } else {
       alert('Sorry, your browser does not support Web storage. Try again with a better one');
     }
+
+    if (cartCount === 0) {
+      cartMessage.textContent = "";
+  } else {
+      cartMessage.textContent = "You previously had " + cartCount + " items in your cart.";
+  }
+
   </script>
 </body>
 
